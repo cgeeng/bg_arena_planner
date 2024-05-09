@@ -13,6 +13,52 @@
 ## Instructions
 
 
+### :fire: Task 1: Design 
+
+Before you start writing, it is important to think about design. You DO NOT have to be perfect in your design, so we will come back to this step a few times. 
+
+1. First, become a detective and read through the files provided - both the .csv file and the java files. Take notes on what you are seeing (such as ordering of the csv lines).  This is a common skill in software engineering, and you will need to do this often as you work with other people's code.
+2. Go to [DesignDocument.md](../DesignDocument.md) and fill out (ONLY) the initial design section.
+
+> [!TIP]
+> You are free  to use mermaid or any other UML tools you want, just make sure if you are using another UML tool, you properly link the image in the markdown file. See the resources page, for a list of [UML tools](https://github.com/CS5004-khoury-lionelle/Resources?tab=readme-ov-file#uml-design-tools).
+
+
+### :fire: Task 2: Implement by Test Driven Development
+
+After your initial design, you should seek to follow the TDD process. This means you should write tests first, and then implement the code to pass those tests. Or better stated, you should write *ONE* test first, implement, and repeat until you have written all your tests. 
+
+1. Figure out a number of tests by brainstorming (done in design)
+2. Write **one** test
+3. Write **just enough** code to make that test pass
+4. Refactor/update  as you go along
+5. Repeat steps 2-4 until you have all the tests passing/fully built program
+
+Note: you often don't know all the tests as you write. As such, it is alright to continue to expand your list. This is where people get stuck on TDD. They think they have to know **all** the tests before they start. You don't. You just need to know the next test, and then at the end you double check you have covered all code paths and have full coverage. 
+
+> [!CAUTION]
+> Make sure to commit as you development. The bare minimum commits would be after every test, but you probably will have additional commits especially at the beginning. 
+
+#### :raising_hand: Implementation Tips
+ ADD HERE
+
+
+
+ 
+### :fire: Task 3: Finish Design Document
+
+By this point, your design has probably changed (very few people have perfect designs the first iteration). Update your design document with the final design in the "final design" section. We want to see the history of your first design to your final design. That is a good thing. 
+
+
+### :fire: Task 4: Finish Report.md
+
+Inside of [Report.md](../Report.md) you will need to answer a series of questions about your program, and about the learning objectives for the module in general. Fill it out. 
+
+
+> [!IMPORTANT]
+> A primary purpose of this activity is to get you working through a process in addition to writing code. In software engineering the process you follow is often just as important as the code you write. This is because the process is what allows you to work with others, and to be able to maintain and update code over time. It may seem tedious right now, but it is a skill that will pay off in the long run.
+
+
 
 
 ## Submission
