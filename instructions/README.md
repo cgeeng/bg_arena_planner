@@ -74,19 +74,23 @@ When you are completed, you need to submit your code to gradescope. Go back to C
 2. Approaching (AG)
    * Passes the style check.  
 3. Meets (MG)
-   * README.md is filled out (name, github repo, etc) 
-     * With out the link to your repo, the TAs won't grade the rest!
+  * README.md is filled out (name, github repo, etc) 
+      * With out the link to your repo, the TAs won't grade the rest!
    * DesignDocument (INITIAL) sections are filled out 
    * All methods are tested with JUnit tests
    * Method contain proper javadoc comments (not just javadoc notation but proper wording in the comment)
    * Report.md technical questions are questions answered correctly.
 4. Exceeds (MG)
-   * Code is DRY (Don't Repeat Yourself) 
+   * Code is DRY (Don't Repeat Yourself)
+      * Including making use of helping/utility classes to reduce duplication.
+   * Student uses proper inheritance without duplication 
    * Methods include tests for edge cases in addition to happy path
+   * Proper use of sorts and sort strategy
    * Design document (FINAL) sections are filled out 
      * The notation needs to be correct, and the TAs will double check the final design
      matches the final implementation.
    * Report.md Deeper Thinking question filled out
+     * Includes at least two references/citations
 
 Legend:
 * AG - Auto-graded
