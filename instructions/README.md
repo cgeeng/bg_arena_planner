@@ -18,8 +18,8 @@ board games to play on Board Game Arena.
 
 ## Instructions
 
-For this assignment, you will be implementing [IGameList](src/main/java/IGameList.java) interface. This interface is used to represent a list of games that a user wants to play on Board Game Arena. You will also be implementing the [IPlanner](src/main/java/IPlanner.java) interface which is used to help filter the BGArena games into smaller lists, so
-they can be added to the GameList. Both of them have classes already associated with them [GameList](src/main/java/GameList.java) and [Planner](src/main/java/Planner.java) respectively. This was to make sure you used the correct constructors.
+For this assignment, you will be implementing [IGameList](src/main/java/student/IGameList.java) interface. This interface is used to represent a list of games that a user wants to play on Board Game Arena. You will also be implementing the [IPlanner](src/main/java/student/IPlanner.java) interface which is used to help filter the BGArena games into smaller lists, so
+they can be added to the GameList. Both of them have classes already associated with them [GameList](src/main/java/student/GameList.java) and [Planner](src/main/java/student/Planner.java) respectively. This was to make sure you used the correct constructors.
 
 > [!IMPORTANT]
 > Just because we provided the base class does NOT mean all the functions you need are there. Just the public ones that are part of the interface. Additionally, we added multiple additional classes for this program as support / utility classes!
