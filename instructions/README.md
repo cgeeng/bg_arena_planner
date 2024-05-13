@@ -1,24 +1,41 @@
 # Board Game Area - Game Planner
 
+This assignment is focused on allowing the client build a list of games they want
+to try out on Board Game Arena. Most of the application was already built  by the previous
+intern who left the company, and you are being asked to finish the application. In the
+end you will have a working program that can help you figure out what
+board games to play on Board Game Arena.
+
+
 ## Learning Objectives
 * Designing with inheritance and polymorphism in java
 * Practicing Test Driven Development
-* Implementing a class hierarchy in Java
 * Implementing junit tests for all methods
 * Making use of java collections/lists
+* Making use of equality and sorting (especially sorting)
 * Explore the use of streams in Java
-* Practice reading and writing files in Java
 
 
 ## Instructions
+
+For this assignment, you will be implementing [IGameList](src/main/java/IGameList.java) interface. This interface is used to represent a list of games that a user wants to play on Board Game Arena. You will also be implementing the [IPlanner](src/main/java/IPlanner.java) interface which is used to help filter the BGArena games into smaller lists, so
+they can be added to the GameList. Both of them have classes already associated with them [GameList](src/main/java/GameList.java) and [Planner](src/main/java/Planner.java) respectively. This was to make sure you used the correct constructors.
+
+> [!IMPORTANT]
+> Just because we provided the base class does NOT mean all the functions you need are there. Just the public ones that are part of the interface. Additionally, we added multiple additional classes for this program as support / utility classes!
+
+Your goal is to implement those two interfaces, so you have a working program. You will find that you will need to additional classes to make your life simpler. While you are only implementing a small portion of this program, that focuses on equality and sorting of data structures - don't let that fool you. It can take a lot to think about the logistics of the ordering, and how to break it down into smaller more manageable parts. Take your time to do that.
+
+We suggest that for Module 05 - you implement the GameList, and some of the Planner (mainly the filter portions), and also finish the technical questions in [Report.md](../Report.md). Then in Module 06, you can add the sorts, and probably update GameList now that you have more tools to work with. This will help spread out a deceptively small assignment, as it isn't small at all once you start working on all the options. 
+
 
 
 ### :fire: Task 1: Design 
 
 Before you start writing, it is important to think about design. You DO NOT have to be perfect in your design, so we will come back to this step a few times. 
 
-1. First, become a detective and read through the files provided - both the .csv file and the java files. Take notes on what you are seeing (such as ordering of the csv lines).  This is a common skill in software engineering, and you will need to do this often as you work with other people's code.
-2. Go to [DesignDocument.md](../DesignDocument.md) and fill out (ONLY) the initial design section.
+1. First, become a detective and read through the files provided. Take notes on what you are seeing.  This is a common skill in software engineering, and you will need to do this often as you work with other people's code. [Report.md](../Report.md) has specific questions on the code that may help you. 
+2. Go to [DesignDocument.md](../DesignDocument.md) and fill out (ONLY) the initial design sections. We have broken them up into sections to help you think about the design in smaller parts.
 
 > [!TIP]
 > You are free  to use mermaid or any other UML tools you want, just make sure if you are using another UML tool, you properly link the image in the markdown file. See the resources page, for a list of [UML tools](https://github.com/CS5004-khoury-lionelle/Resources?tab=readme-ov-file#uml-design-tools).
