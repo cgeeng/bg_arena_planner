@@ -5,6 +5,73 @@ code as it is meant to help you understand some of the concepts.
 
 ## Technical Questions
 
+1. What is the difference between == and .equals in java? Provide a code example of each, where they would return different results for an object. Include the code snippet using the hash marks (```) to create a code block.
+   ```java
+   // your code here
+   
+   ```
+
+
+
+
+2. Logical sorting can be difficult when talking about case. For example, should "apple" come before "Banana" or after? How would you sort a list of strings in a case-insensitive manner? 
+
+
+
+
+
+3. In our version of the solution, we had the following code (snippet)
+    ```java
+    public static Operations getOperatorFromStr(String str) {
+        if (str.contains(">=")) {
+            return Operations.GREATER_THAN_EQUALS;
+        } else if (str.contains("<=")) {
+            return Operations.LESS_THAN_EQUALS;
+        } else if (str.contains(">")) {
+            return Operations.GREATER_THAN;
+        } else if (str.contains("<")) {
+            return Operations.LESS_THAN;
+        } else if (str.contains("=="))...
+    ```
+    Why would the order in which we checked matter (if it does matter)? Provide examples either way proving your point. 
+
+
+
+4. What is the difference between a List and a Set in Java? When would you use one over the other? 
+
+
+
+
+5. In [GamesLoader.java](src/main/java/student/GamesLoader.java), we use a Map to help figure out the columns. What is a map? Why would we use a Map here? 
+
+
+
+
+6. [GameData.java](src/main/java/student/GameData.java) is actually an `enum` with special properties we added to help with column name mappings. What is an `enum` in Java? Why would we use it for this application?
+
+
+
+
+
+
+
+7. Rewrite the following as a switch statement inside the empty code block.
+    ```java
+    switch (ct) {
+                case CMD_QUESTION: // same as help
+                case CMD_HELP:
+                    processHelp();
+                    break;
+                case INVALID:
+                default:
+                    CONSOLE.printf("%s%n", ConsoleText.INVALID);
+            }
+    ``` 
+
+    ```java
+    // your code here, don't forget the class name that is dropped in the switch block..
+    
+    ```
 
 ## Deeper Thinking
 
