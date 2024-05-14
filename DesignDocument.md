@@ -4,9 +4,19 @@
 This document is meant to provide a tool for you to demonstrate the design process. You need to work on this before you code, and after have a finished product. That way you can compare the changes, and changes in design are normal as you work through a project. It is contrary to popular belief, but we are not perfect our first attempt. We need to iterate on our designs to make them better. This document is a tool to help you do that.
 
 
-## (INITIAL DESIGN): Class Diagram
+## (INITIAL DESIGN): Class Diagram 
 
-Place your class diagram below. Make sure you check the fil in the browser on github.com to make sure it is rendering correctly. If it is not, you will need to fix it. As a reminder, here is a link to tools that can help you create a class diagram: [Class Resources: Class Design Tools](https://github.com/CS5004-khoury-lionelle/Resources?tab=readme-ov-file#uml-design-tools)
+Place your class diagrams below. Make sure you check the file in the browser on github.com to make sure it is rendering correctly. If it is not, you will need to fix it. As a reminder, here is a link to tools that can help you create a class diagram: [Class Resources: Class Design Tools](https://github.com/CS5004-khoury-lionelle/Resources?tab=readme-ov-file#uml-design-tools)
+
+### Provided Code
+
+Provide a class diagram for the provide code as you read through it.  For the classes you are adding, you will create them as a separate diagram, so for now, you can just point towards the interfaces for the provided code diagram.
+
+
+
+### Your Plans/Design
+
+Create a class diagram for the classes you plan to create. This is your initial design, and it is okay if it changes. Your starting points are the interfaces. 
 
 
 
@@ -35,6 +45,8 @@ You should feel free to number your brainstorm.
 ## (FINAL DESIGN): Class Diagram
 
 Go through your completed code, and update your class diagram to reflect the final design. Make sure you check the fil in the browser on github.com to make sure it is rendering correctly. It is normal that the two diagrams don't match! Rarely (though possible) is your initial design perfect. 
+
+For the final design, you just need to do a single diagram that includes both the original classes and the classes you added. 
 
 > [!WARNING]
 > If you resubmit your assignment for manual grading, this is a section that often needs updating. You should double check with every resubmit to make sure it is up to date.
