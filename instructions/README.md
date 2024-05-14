@@ -22,12 +22,25 @@ For this assignment, you will be implementing [IGameList](src/main/java/student/
 they can be added to the GameList. Both of them have classes already associated with them [GameList](src/main/java/student/GameList.java) and [Planner](src/main/java/student/Planner.java) respectively. This was to make sure you used the correct constructors.
 
 > [!IMPORTANT]
-> Just because we provided the base class does NOT mean all the functions you need are there. Just the public ones that are part of the interface. Additionally, we added multiple additional classes for this program as support / utility classes!
+> Just because we provided the base class does NOT mean all the functions you need are there. Just the public ones that are part of the interface. In our solution, we added multiple additional classes for this program as support / utility classes, and multiple private methods to each class! 
+> 
+> You **cannot** modify the interfaces IGameList or IPlanner or the constructor types for GameList or Planner. Everything else you can modify as needed. The autograder unit tests will be based on GameList and Planner, thus the reason you cannot modify them. 
 
 Your goal is to implement those two interfaces, so you have a working program. You will find that you will need to additional classes to make your life simpler. While you are only implementing a small portion of this program, that focuses on equality and sorting of data structures - don't let that fool you. It can take a lot to think about the logistics of the ordering, and how to break it down into smaller more manageable parts. Take your time to do that.
 
 We suggest that for Module 05 - you implement the GameList, and some of the Planner (mainly the filter portions), and also finish the technical questions in [Report.md](../Report.md). Then in Module 06, you can add the sorts, and probably update GameList now that you have more tools to work with. This will help spread out a deceptively small assignment, as it isn't small at all once you start working on all the options. 
 
+> [!TIP]
+> We have included a sample completed program you can try out. No promise that it is
+> 100% bullet proof, and probably some typos, but you can get the idea
+> of how the final program works. If you go into the sample_working directory, you can run the program with the following command:
+> ```console
+> bin/bg_arena_planner
+>    or if windows
+> bin\bg_arena_planner.bat
+> ```
+> Both commands will execute the .jar file in the lib directory while properly setting the path. For macOS and linux, 
+> you may need to add the execute permission to the file (`chmod +x bin/bg_arena_planner`). 
 
 
 ### :fire: Task 1: Design 
@@ -57,10 +70,33 @@ Note: you often don't know all the tests as you write. As such, it is alright to
 > Make sure to commit as you development. The bare minimum commits would be after every test, but you probably will have additional commits especially at the beginning. 
 
 #### :raising_hand: Implementation Tips
- ADD HERE
+* Make sure to focus on how to keep things generalized, and broken up into other classes. 
+  * For example, we had a Filter.class that had stringFilter, intFilter, and doubleFilter - which handled multiple types of filters (name, max/min players and time, rating and difficulty, etc). 
+* We found it useful to create an Operator Enum similar to the GameData or ConsoleText enum. We added an additional useful function to help with filtering, which is as follows:
+   ```java
+   public static Operations getOperatorFromStr(String str) {
+        if (str.contains(">=")) {
+            return Operations.GREATER_THAN_EQUALS;
+        } else if (str.contains("<=")) {
+            return Operations.LESS_THAN_EQUALS;
+        } else if (str.contains(">")) ...
+        // rest omitted for brevity - but helps drive the point
+   ```
+   By using this enum, we never had to type ">=" or "<=" in our code, and could just use the enum. This made it easier to change the operator if needed, but also made it easier
+   to check the filter and run various methods based on the operator returned. It would be possible to accomplish the same thing with a number of `public static final String` variables, and a few other supporting methods. The important part is try to break up your code.
+* A sorts strategy similar to the one presented at the end of Module 06 team activity is **important!** It made it easier to handle all the sorting options. 
+* Make sure you follow TDD. There area  lot of paths, but you can continue to add to your code as you develop tests - this especially helps in parsing the strings
+  * For example, you have a test for a filter - you write the string parser just for that test
+  * You have a test that handles multiple filters, you add to the string parser to handle multiple filters
+  * Then you have a test for a sort, you add to the string parser to handle the sorts 
+  * Without that, the struggle of trying to visualize all the conditions gets very overwhelming! 
 
 
 
+
+
+> [!WARNING]
+> If you modify one of our files, you need to add tests for it. If you do not modify a provided file, you don't need to add tests. This can be done without modifying our provided code, but you are welcome to modify it (except for the caveat about IGameList and IPlanner) if it fits your overall design better. 
  
 ### :fire: Task 3: Finish Design Document
 
@@ -121,6 +157,3 @@ If you need a reminder about the grading policy, please review the syllabus and 
 
 ### Autograder Limitation
 Currently the autograder is limited in how it can test. As such, when it comes across an error it just stops. This means that if you have multiple errors in your code, you may only see the first one. We are working on improving this, but for now, you will need to fix the first error, and then rerun the tests to see the next error. Eventually, if every test passes, you will get the single point. It also may give you points for valid style, while errors exist in the code - so really assume the first 2 points are done together. 
-
-
-## Resources
