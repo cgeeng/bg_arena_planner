@@ -55,7 +55,7 @@ code as it is meant to help you understand some of the concepts.
 
 
 
-7. Rewrite the following as a switch statement inside the empty code block.
+7. Rewrite the following as an if else statement inside the empty code block.
     ```java
     switch (ct) {
                 case CMD_QUESTION: // same as help
