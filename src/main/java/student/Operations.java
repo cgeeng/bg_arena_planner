@@ -31,6 +31,8 @@ package student;
     }
  * </pre>
  * 
+ * It is technically OPTIONAL for you to use this file, but
+ * we included it as it was very useful in our solution.
  */
 public enum Operations {
 
