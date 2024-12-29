@@ -71,7 +71,8 @@ Note: you often don't know all the tests as you write. As such, it is alright to
 
 #### :raising_hand: Implementation Tips
 * Make sure to focus on how to keep things generalized, and broken up into other classes. 
-  * For example, we had a Filter.class that had stringFilter, intFilter, and doubleFilter - which handled multiple types of filters (name, max/min players and time, rating and difficulty, etc). 
+  * For example, we had a Filter.class that had stringFilter and numberFilter  - which handled multiple types of filters (name, max/min players and time, rating and difficulty, etc). 
+    * Switch statements are really helpful inside the filters based on the Operation.
 * We found it useful to create an Operator Enum similar to the GameData or ConsoleText enum. We added an additional useful function to help with filtering, which is as follows:
    ```java
    public static Operations getOperatorFromStr(String str) {
