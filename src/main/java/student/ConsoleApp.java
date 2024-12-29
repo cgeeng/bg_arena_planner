@@ -1,12 +1,12 @@
 package student;
 
-import java.io.Console;
 import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
 import java.util.stream.Stream;
 import java.util.Random;
+
 
 /**
  * Primary application that makes use of the IGameList and IPlanner interfaces.
@@ -18,7 +18,7 @@ import java.util.Random;
  */
 public class ConsoleApp {
     /** Interaction with the system terminal/command line. */
-    private static final Console CONSOLE = System.console();
+    private static final Scanner IN = new Scanner(System.in);
     /** Default name to save the game list to. */
     private static final String DEFAULT_FILENAME = "games_list.txt";
     /** random number generator only needs to be built once. */
@@ -39,7 +39,7 @@ public class ConsoleApp {
     public ConsoleApp(IGameList gameList, IPlanner planner) {
         this.gameList = gameList;
         this.planner = planner;
-    }
+    }    
 
     /**
      * Start the console application.
@@ -47,7 +47,7 @@ public class ConsoleApp {
      * Processes the main menu commands and redirects.
      */
     public void start() {
-        CONSOLE.printf("%s%n", ConsoleText.WELCOME);
+        printOutput("%s%n", ConsoleText.WELCOME);
         ConsoleText ct = nextCommand();
         while (ct != ConsoleText.CMD_EXIT) {
             switch (ct) {
@@ -66,7 +66,7 @@ public class ConsoleApp {
                     break;
                 case INVALID:
                 default:
-                    CONSOLE.printf("%s%n", ConsoleText.INVALID);
+                    printOutput("%s%n", ConsoleText.INVALID);
             }
 
             // clean up scanner.
@@ -76,7 +76,7 @@ public class ConsoleApp {
             ct = nextCommand();
         }
 
-        CONSOLE.printf("%s%n", ConsoleText.GOODBYE);
+        printOutput("%s%n", ConsoleText.GOODBYE);
     }
 
     /**
@@ -86,7 +86,7 @@ public class ConsoleApp {
         int max = (int) planner.filter("").count();
         if (max > 0) {
             int random = RND.nextInt(max) + 1; // random is 0-(max-1) so add 1.
-            CONSOLE.printf("%s %d%n", ConsoleText.EASTER_EGG, random);
+            printOutput("%s %d%n", ConsoleText.EASTER_EGG, random);
         }
         // else do nothing, not a secret easter egg if filter is empty.
     }
@@ -101,13 +101,13 @@ public class ConsoleApp {
         }
         switch (ct) {
             case CMD_FILTER:
-                CONSOLE.printf("%s%n", ConsoleText.FILTER_HELP);
+                printOutput("%s%n", ConsoleText.FILTER_HELP);
                 break;
             case CMD_LIST:
-                CONSOLE.printf("%s%n", ConsoleText.LIST_HELP);
+                printOutput("%s%n", ConsoleText.LIST_HELP);
                 break;
             default:
-                CONSOLE.printf("%s%n", ConsoleText.HELP);
+                printOutput("%s%n", ConsoleText.HELP);
         }
     }
 
@@ -123,13 +123,13 @@ public class ConsoleApp {
             filter = filter.replaceAll("\\s", ""); // remove spaces
             filter = filter.toLowerCase(); // make it lower case
             if (filter.equalsIgnoreCase(ConsoleText.CMD_QUESTION.toString())) {
-                CONSOLE.printf("%s%n", ConsoleText.FILTER_HELP);
+                printOutput("%s%n", ConsoleText.FILTER_HELP);
                 return; // leave early. only doing ? as help could be a game name.
             }
 
             if (filter.equalsIgnoreCase(ConsoleText.CMD_CLEAR.toString())) {
                 planner.reset();
-                CONSOLE.printf("%s%n", ConsoleText.FILTERED_CLEAR);
+                printOutput("%s%n", ConsoleText.FILTERED_CLEAR);
                 return; // leave early.
             }
             if (filter.contains(ConsoleText.CMD_SORT_OPTION.toString())) {
@@ -151,17 +151,17 @@ public class ConsoleApp {
                     try {
                         sortON = GameData.fromString(sort);
                     } catch (IllegalArgumentException e) {
-                        CONSOLE.printf("%s%n", ConsoleText.INVALID);
+                        printOutput("%s%n", ConsoleText.INVALID);
                         return; // leave early.
                     }
                 }
 
-                result = planner.filter(parts[0], sortON, ascending);
+                result = planner.filter(parts[0], sortON, ascending);  // NOTICE: sortON and ascending are used here.
             } else {
-                result = planner.filter(filter);
+                result = planner.filter(filter); // default sort
             }
         } else {
-            CONSOLE.printf("%s%n", ConsoleText.NO_FILTER);
+            printOutput("%s%n", ConsoleText.NO_FILTER);
             result = planner.filter("");
         }
         printFilterStream(result, sortON);
@@ -178,7 +178,7 @@ public class ConsoleApp {
         int counter = 1;
         List<BoardGame> gameList = games != null ? games.toList() : Collections.emptyList();
         for (BoardGame game : gameList) {
-            CONSOLE.printf("%d: %s%n", counter++, game.toStringWithInfo(sortON));
+            printOutput("%d: %s%n", counter++, game.toStringWithInfo(sortON));
         }
     }
 
@@ -205,7 +205,7 @@ public class ConsoleApp {
                     try {
                         gameList.addToList(toAdd, planner.filter(""));
                     } catch (IllegalArgumentException e) {
-                        CONSOLE.printf("%s %s%n", ConsoleText.INVALID_LIST, toAdd);
+                        printOutput("%s %s%n", ConsoleText.INVALID_LIST, toAdd);
                     }
                     break;
                 case CMD_REMOVE:
@@ -216,7 +216,7 @@ public class ConsoleApp {
                     try {
                         gameList.removeFromList(remove);
                     } catch (IllegalArgumentException e) {
-                        CONSOLE.printf("%s %s%n", ConsoleText.INVALID_LIST, remove);
+                        printOutput("%s %s%n", ConsoleText.INVALID_LIST, remove);
                     }
                     break;
                 case CMD_SAVE:
@@ -229,11 +229,11 @@ public class ConsoleApp {
                     break;
                 case CMD_QUESTION:
                 case CMD_HELP:
-                    CONSOLE.printf("%s%n", ConsoleText.LIST_HELP);
+                    printOutput("%s%n", ConsoleText.LIST_HELP);
                     break;
                 default:
-                    CONSOLE.printf("%s%n", ConsoleText.INVALID);
-                    CONSOLE.printf("%s%n", ConsoleText.LIST_HELP);
+                    printOutput("%s%n", ConsoleText.INVALID);
+                    printOutput("%s%n", ConsoleText.LIST_HELP);
             }
         } else {
             printCurrentList(); // just print the list if "list" only is entered.
@@ -247,10 +247,10 @@ public class ConsoleApp {
         if (gameList.count() > 0) {
             int counter = 1;
             for (String game : gameList.getGameNames()) {
-                CONSOLE.printf("%d: %s%n", counter++, game);
+                printOutput("%d: %s%n", counter++, game);
             }
         } else {
-            CONSOLE.printf("%s%n", ConsoleText.NO_GAMES_LIST);
+            printOutput("%s%n", ConsoleText.NO_GAMES_LIST);
         }
 
     }
@@ -262,10 +262,10 @@ public class ConsoleApp {
      */
     private ConsoleText nextCommand() {
         if (current == null || !current.hasNext()) {
-            String line = CONSOLE.readLine("%s", ConsoleText.PROMPT);
-            current = new Scanner(line.trim());
+            String line = getInput("%s", ConsoleText.PROMPT);
+            current = new Scanner(line.trim()); // now split up the line
         }
-        return ConsoleText.fromString(current.next());
+        return ConsoleText.fromString(current.next()); // get the command
     }
 
     /**
@@ -275,6 +275,40 @@ public class ConsoleApp {
      */
     private String remainder() {
         return current != null && current.hasNext() ? current.nextLine().trim() : "";
+    }
+
+    /** 
+     * Gets input from the client.
+     * 
+     * @param format the format string to print.
+     * @param args   the arguments to the format string.
+     * 
+     * @return the input from the client as a string, one line at a time.
+     */
+    private static String getInput(String format, Object... args) {
+        System.out.printf(format, args);
+        if (IN == null) {
+            return "";
+        }
+        if (!IN.hasNextLine()) {
+            return "";
+        }
+        return IN.nextLine();
+    }
+
+
+    /** 
+     * Prints output to the client.
+     * 
+     * We could call printf directly, but this gives us one location in case
+     * we want to change the output to a file or other location.
+     * 
+     * 
+     * @param format the format string to print.
+     * @param output the output to print (array to match the format).
+     */
+    private static void printOutput(String format, Object... output) {
+        System.out.printf(format, output);
     }
 
     /**
