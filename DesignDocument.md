@@ -10,7 +10,7 @@ Place your class diagrams below. Make sure you check the file in the browser on 
 
 ### Provided Code
 
-Provide a class diagram for the provide code as you read through it.  For the classes you are adding, you will create them as a separate diagram, so for now, you can just point towards the interfaces for the provided code diagram.
+Provide a class diagram for the provided code as you read through it.  For the classes you are adding, you will create them as a separate diagram, so for now, you can just point towards the interfaces for the provided code diagram.
 
 
 
@@ -44,7 +44,7 @@ You should feel free to number your brainstorm.
 
 ## (FINAL DESIGN): Class Diagram
 
-Go through your completed code, and update your class diagram to reflect the final design. Make sure you check the fil in the browser on github.com to make sure it is rendering correctly. It is normal that the two diagrams don't match! Rarely (though possible) is your initial design perfect. 
+Go through your completed code, and update your class diagram to reflect the final design. Make sure you check the file in the browser on github.com to make sure it is rendering correctly. It is normal that the two diagrams don't match! Rarely (though possible) is your initial design perfect. 
 
 For the final design, you just need to do a single diagram that includes both the original classes and the classes you added. 
 
