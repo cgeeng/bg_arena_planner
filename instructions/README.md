@@ -52,6 +52,8 @@ Before you start writing, it is important to think about design. You DO NOT have
 
 > [!TIP]
 > You are free  to use mermaid or any other UML tools you want, just make sure if you are using another UML tool, you properly link the image in the markdown file. See the resources page, for a list of [UML tools](https://github.com/CS5004-khoury-lionelle/Resources?tab=readme-ov-file#uml-design-tools).
+>
+> This will be submitted as Homework 5-6 Check-In.
 
 
 ### :fire: Task 2: Implement by Test Driven Development
@@ -122,38 +124,11 @@ When you are completed, you need to submit your code to gradescope. Go back to C
 
 ## 📝 Grading Rubric
 
-1. Learning (AG)
-   * Code compiles without issue
-   * Code passes all tests 
-2. Approaching (AG)
-   * Passes the style check.  
-3. Meets (MG)
-   * README.md is filled out (name, github repo, etc) 
-      * With out the link to your repo, the TAs won't grade the rest!
-   * DesignDocument (INITIAL) sections are filled out 
-   * All methods are tested with JUnit tests
-   * Method contain proper javadoc comments (not just javadoc notation but proper wording in the comment)
-   * Report.md technical questions are questions answered correctly.
-4. Exceeds (MG)
-   * Code is DRY (Don't Repeat Yourself)
-      * Including making use of helping/utility classes to reduce duplication.
-   * Student uses proper inheritance without duplication 
-   * Methods include tests for edge cases in addition to happy path
-   * Proper use of sorts and sort strategy
-   * Design document (FINAL) sections are filled out 
-     * The notation needs to be correct, and the TAs will double check the final design
-     matches the final implementation.
-   * Report.md Deeper Thinking question filled out
-     * Includes at least two references/citations
+<img width="472" alt="image" src="https://github.com/user-attachments/assets/c36d6746-b5a8-4520-ab8f-de8b8a9f5ec0" />
 
-Legend:
-* AG - Auto-graded
-* MG - Manually graded
 
 ### Submission Reminder 🚨
-For manually graded elements, we only guarantee time to submit for a regrade IF you submit by the DUE DATE. Submitting late may mean it isn't possible for the MG to be graded before the AVAILABLE BY DATE, removing any windows for you to resubmit in time. While it will be graded, it is always best to submit by the due date, so you have full opportunity to improve your grade.
-
-If you need a reminder about the grading policy, please review the syllabus and the canvas page on 'formative/summative' grading. This class uses a unique grading system that will allow you to be flexible with due dates and multiple resubmissions (if you submit with time for TAs to give feedback), but we also ask that you continue to work on the assignment until you get a full grade.
+Submit early because the autograder can provide you information on errors in your code. You can ask instructors or come to office hours to discuss errors you cannot debug.
 
 
 ### Autograder Limitation
